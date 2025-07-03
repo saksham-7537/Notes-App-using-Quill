@@ -1,69 +1,42 @@
-# React + TypeScript + Vite
+# 📝 Notes App using Quill
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A sleek and minimal **rich text editor** built with **React** and **Quill.js**, perfect for creating and managing beautiful notes with formatting.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![GitHub Repo Size](https://img.shields.io/github/repo-size/saksham-7537/Notes-App-using-Quill?style=flat-square)
+![GitHub Stars](https://img.shields.io/github/stars/saksham-7537/Notes-App-using-Quill?style=flat-square)
+![GitHub Forks](https://img.shields.io/github/forks/saksham-7537/Notes-App-using-Quill?style=flat-square)
+![License](https://img.shields.io/github/license/saksham-7537/Notes-App-using-Quill?style=flat-square)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## ✨ Features
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- 🖋️ Rich text editing using [Quill.js](https://quilljs.com/)
+- 💾 Auto-saving support (can be extended with local storage or a backend)
+- 🔄 Real-time editing experience
+- 📱 Fully responsive interface
+- 📁 Clean and modular React component structure
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## ⚙️ Tech Stack
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- **React**
+- **Quill.js**
+- **React-Quill**
+- **Tailwind CSS** (optional, depending on your styling)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🚀 Getting Started
+
+Follow these steps to run the project locally:
+
+```bash
+git clone https://github.com/saksham-7537/Notes-App-using-Quill.git
+cd Notes-App-using-Quill
+npm install
+npm run dev
+
