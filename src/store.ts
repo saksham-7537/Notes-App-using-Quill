@@ -34,32 +34,38 @@ const useNotesStore = create<NotesState>((set) => ({
   setCurrentNoteIndex: (index) => set(() => ({ currentNoteIndex: index })),
 
   addOrUpdateNote: () =>
-    set((state) => {
-      const { editorContent, noteColor, currentNoteIndex, notes } = state;
-      if (editorContent.trim()) {
-        if (currentNoteIndex !== null) {
-          // Update existing note
-          const updatedNotes = [...notes];
-          updatedNotes[currentNoteIndex] = {
-            text: editorContent,
-            color: noteColor,
-          };
-          return {
-            notes: updatedNotes,
-            editorContent: "",
-            noteColor: "#ffffff",
-            currentNoteIndex: null,
-          };
-        } else {
-          return {
-            notes: [...notes, { text: editorContent, color: noteColor }],
-            editorContent: "",
-            noteColor: "#ffffff",
-            currentNoteIndex: null,
-          };
-        }
-      }
-    }),
+  set((state) => {
+    const { editorContent, noteColor, currentNoteIndex, notes } = state;
+
+    if (!editorContent.trim()) {
+      return state; // ✅ IMPORTANT
+    }
+
+    if (currentNoteIndex !== null) {
+      const updatedNotes = [...notes];
+      updatedNotes[currentNoteIndex] = {
+        text: editorContent,
+        color: noteColor,
+      };
+
+      return {
+        ...state,
+        notes: updatedNotes,
+        editorContent: "",
+        noteColor: "#ffffff",
+        currentNoteIndex: null,
+      };
+    }
+
+    return {
+      ...state,
+      notes: [...notes, { text: editorContent, color: noteColor }],
+      editorContent: "",
+      noteColor: "#ffffff",
+      currentNoteIndex: null,
+    };
+  }),
+
 
   selectNote: (index) =>
     set((state) => ({
